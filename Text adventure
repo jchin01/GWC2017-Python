@@ -1,1 +1,61 @@
 
+def game():
+    start = '''
+    You went camping with your friends, but you got lost...You've encountered a fork in the road. What do you do?
+    '''
+
+
+    print(start)
+    def start():
+        startans=input("Do you want to play again?")
+        if startans == "yes":
+            game()
+        elif startans == "no":
+            print("ok bye")
+
+    def endscreen():
+        print("THE END!Play again")
+    def nooption():
+        print("Trying to be smart huh?YOU LOST!Try a real option.")
+
+
+    user_input = input("Type 'left' to go left or 'right' to go right.")
+
+    if user_input == "left":
+        print("You decide to go left and encountered a cabin.")
+        answer1=input("If you wany you want to look for a key type key if you want to try to break down the door type door.")
+
+        if answer1 == "key":
+            print("you found the key, but you ran out of food! YOU LOST!")
+            endscreen()
+            start()
+
+        elif answer1 == "door": # finished the story by writing what happens
+            print("you're injured and you are unable to seek help. YOU LOST!")
+            endscreen()
+            start()
+        else:
+            nooption()
+            start()
+
+    elif user_input == "right":
+        print("You choose to go right in search of food...")
+        answer4 = input ("To trap the bear type trap if you choose to sneak past then type sneak.") # finished the story writing what happens
+
+        if answer4 == "trap":
+            print("You get food but the bear breaks out the trap and chases you!YOU LOST!")
+            endscreen()
+            start()
+
+        elif answer4 == "sneak":
+            print("You get food and survive the night! YOU WON!")
+            endscreen()
+            start()
+        else:
+                nooption()
+                start()
+    else:
+        nooption()
+        start()
+game()
+
