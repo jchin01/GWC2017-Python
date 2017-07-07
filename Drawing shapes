@@ -1,1 +1,31 @@
+from turtle import *
+import math
+
+incolor=input('What color do you want your shape to be?')
+x=input('Enter the number of sides you want your shape to have:')
+
+s=Screen()
+s.bgcolor("pink")
+# Name your Turtle.
+t = Turtle()
+t.shape("turtle")
+t.begin_fill()
+# Set Up your screen and starting position.
+t.penup()
+setup(500,300)
+x_pos = -150
+y_pos = 50
+t.setposition(x_pos, y_pos)
+
+t.fillcolor(incolor)
+t.pencolor(incolor)
+t.pendown()
+
+t.speed(5)
+
+for i in range(0, int(x)):
+    t.forward(100)
+    t.right(360/int(x))
+t.end_fill()
+exitonclick()
 
